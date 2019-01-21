@@ -1,0 +1,17 @@
+Button		InputManager
+----------------------------------
+start		joystick button 7
+select		joystick button 6
+L1			joystick button 4
+L3			joystick button 8
+R1			joystick button 5
+R3			joystick button 9
+X			joystick button 0
+#			joystick button 2
+Triangle	joystick button 3
+O			joystick button 1
+
+Axis		Input Manager
+----------------------------------
+L2			+3rd axis
+R2			-3rd axis
