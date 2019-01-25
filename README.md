@@ -4,3 +4,7 @@ The idea here is for me personally to keep a collection of useful bits of code a
 
 # MenuSystemExample
 Simple menu example revolving around one monobehaviour that handles its child objects by name. All you have to do is point a button to the GoToMenu(childname) method and you are set.
+
+# UNETNetworkBasicExample
+Simple lobby matchmaking/LAN multiplayer example using UNET.
+Do note that UNET is deprecated and is getting phased out of Unity.
