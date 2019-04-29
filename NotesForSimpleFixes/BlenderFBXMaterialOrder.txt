@@ -1,0 +1,11 @@
+Fix material order in blender before exporting to fbx
+
+Put the materials in the order you want
+
+1. In edit mode, select all vertices
+
+2. Press W
+
+3. Select "Sort Mesh Elements"
+
+4. Sort by "Material"
