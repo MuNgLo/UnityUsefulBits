@@ -1,0 +1,5 @@
+One way to align object local axis to a face:
+- face selected, ctrl+alt+space to create a new custom transform orientation (TO)
+- everything selected, ctrl+H to hook geometry to a new helper object
+- object mode, only the mesh type object selected, object menu - transform - align to TO
+Hook keeps the geometry in place while the object gets rotated to the orientation of the face, just have to apply the hook modifier and get rid of the helper empty.
