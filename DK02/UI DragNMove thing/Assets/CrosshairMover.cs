@@ -7,51 +7,53 @@ public class CrosshairMover : MonoBehaviour
 {
     public Image _crosshair;
     public RectTransform _panel;
+    public float _range = 10.0f;
     private bool _bIsInside = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void CHMouseEnter()
     {
-        Debug.Log("Mouse Enter!");
+        //Debug.Log("Mouse Enter!");
         _bIsInside = true;
     }
     public void CHMouseExit()
     {
-        Debug.Log("Mouse Exit!");
+        //Debug.Log("Mouse Exit!");
         _bIsInside = false;
     }
     public void CHMouseDrag()
     {
-        Debug.Log("Mouse Drag!");
+        //Debug.Log("Mouse Drag!");
         if (_bIsInside)
         {
-            SnapCrossHairToCursor();
+            if (InRange())
+            {
+                SnapCrossHairToCursor();
+            }
         }
     }
     public void CHMouseClick()
     {
-        Debug.Log($"Mouse Click! POS: {Input.mousePosition.ToString()}");
-        SnapCrossHairToCursor();
+        //Debug.Log($"Mouse Click! POS: {Input.mousePosition.ToString()}");
+        if (InRange())
+        {
+            SnapCrossHairToCursor();
+        }
     }
 
     private void SnapCrossHairToCursor()
     {
-        _crosshair.transform.position = Input.mousePosition;
+        _crosshair.rectTransform.position = Input.mousePosition;
     }
 
-    private Vector3 PosTranslation(Vector3 vIn)
+    private bool InRange()
     {
-        Vector3 vOut = new Vector3();
-        vOut.x = vIn.x - _panel.position.x - _panel.
+        Vector3 panelCenter = _panel.position;
+        if (Vector3.Distance(panelCenter, Input.mousePosition) < _range)
+        {
+            Debug.Log("In range!");
+            return true;
+        }
+        Debug.Log("Outside range!");
+        return false;
     }
 }
